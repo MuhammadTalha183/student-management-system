@@ -1,14 +1,15 @@
-const form = document.getElementById('student-form');
+const form = document.getElementById('studentForm');
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit',async function(event) {
     event.preventDefault();
 
     const studentData = {
         fullname: document.getElementById('fullname').value,
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value,
-        address: document.getElementById('address').value,
-        course: document.getElementById('course').value
+        course: document.getElementById('course').value,
+                address: document.getElementById('gender').value,
+
     }
 
        try {

@@ -38,6 +38,8 @@
 import pool from "../config/db.js";
 
 export const addstudent = async (req, res) => {
+
+    console.log(req.body);
     try {
 
         const {
