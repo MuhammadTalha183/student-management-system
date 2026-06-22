@@ -1,19 +1,37 @@
-import { pool } from "pg";
-import dotenv from "dotenv";
+// import  pool  from "pg";
+// import dotenv from "dotenv";
 
+// dotenv.config();
+
+// const pool = new Pool({
+//     connectionString: process.env.DATABASE_URL,
+//     ssl:{
+//         rejectUnauthorized: false
+//     }
+// })
+
+
+// // test conection 
+// pool.connect()
+// .then(()=>console.log("✅ DB Connected Successfully "))
+// .catch((err) => console.error("❌ DB Connection Failed ", err));
+
+// export default {pool};
+
+import { Pool } from "pg";
+import dotenv from "dotenv";
 dotenv.config();
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl:{
-        rejectUnauthorized: flase
-    }
-})
+    ssl: {
+        rejectUnauthorized: false,
+    },
+});
 
-
-// test conection 
+// test connection
 pool.connect()
-.then(()=>console.log("✅ DB Connected Successfully "))
-.catch((err) => console.error("❌ DB Connection Failed ", err));
+    .then(() => console.log("✅ DB Connected"))
+    .catch((err) => console.error("❌ DB Connection Error", err));
 
-export default pool;
+export default { pool };
