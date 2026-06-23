@@ -8,9 +8,8 @@ form.addEventListener('submit',async function(event) {
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value,
         course: document.getElementById('course').value,
-                address: document.getElementById('gender').value,
-
-    }
+        gender: document.getElementById('gender').value
+    };
 
        try {
 

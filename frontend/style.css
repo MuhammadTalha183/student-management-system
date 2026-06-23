@@ -1,0 +1,91 @@
+/* 1. Global Reset & Base Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  color: #333;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2. Responsive Heading Styling */
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2c3e50;
+  font-size: 1.8rem; /* Scalable font size for mobile */
+}
+
+/* 3. Form Container Layout (Mobile First) */
+#studentForm {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Limits maximum desktop size */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Uniform spacing between elements */
+}
+
+/* 4. Form Elements Styling */
+#studentForm input,
+#studentForm select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Accent highlight when user clicks an input */
+#studentForm input:focus,
+#studentForm select:focus {
+  border-color: #3498db;
+}
+
+/* 5. Responsive Submit Button */
+#studentForm button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 8px;
+}
+
+#studentForm button:hover {
+  background-color: #2980b9;
+}
+
+/* 6. Media Queries for Larger Screens */
+@media (min-width: 768px) {
+  body {
+    padding: 40px;
+  }
+  
+  h1 {
+    font-size: 2.2rem; /* Grows larger on tablets and desktops */
+  }
+
+  #studentForm {
+    padding: 40px; /* More padding inside the container */
+  }
+}
