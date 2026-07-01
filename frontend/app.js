@@ -35,3 +35,19 @@ form.addEventListener('submit',async function(event) {
 
 });
 
+
+const fetchStudents = async () => {
+    try {
+        const responce = await fetch("http://localhost:5000/api/students/getStudents");
+        const data = await responce.json();
+        console.log(data);
+
+        for (let student of data ) {
+            document.write(`studentName : ${student.fullname} <br> studentEmail : ${student.email} <br> studentPhone : ${student.phone} <br> studentCourse : ${student.course} <br> studentGender : ${student.gender} <br><br>`);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+fetchStudents();
