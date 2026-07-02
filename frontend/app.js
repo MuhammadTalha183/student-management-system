@@ -42,8 +42,16 @@ const fetchStudents = async () => {
         const data = await responce.json();
         console.log(data);
 
-        for (let student of data ) {
-            document.write(`studentName : ${student.fullname} <br> studentEmail : ${student.email} <br> studentPhone : ${student.phone} <br> studentCourse : ${student.course} <br> studentGender : ${student.gender} <br><br>`);
+        for (const student of data) {
+           document.getElementById('studentsList').innerHTML += `
+           <tr>
+                <td>${student.fullname}</td>
+                <td>${student.email}</td>
+                <td>${student.phone}</td>
+                <td>${student.course}</td>
+                <td>${student.gender}</td>
+           </tr>
+           `
         }
     } catch (error) {
         console.log(error);
