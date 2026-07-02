@@ -45,11 +45,11 @@ const fetchStudents = async () => {
         for (const student of data) {
            document.getElementById('studentsList').innerHTML += `
            <tr>
-                <td>${student.fullname}</td>
-                <td>${student.email}</td>
-                <td>${student.phone}</td>
-                <td>${student.course}</td>
-                <td>${student.gender}</td>
+                <td> ${student.fullname} </td> <br>
+                <td>${student.email}</td> <br>
+                <td>${student.phone}</td><br>
+                <td>${student.course}</td><br>
+                <td>${student.gender}</td><br>
            </tr>
            `
         }
