@@ -3,13 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Student Management</title>
+
+    <link rel="stylesheet" href="student.css">
 </head>
 <body>
-    
-    <h1>Student Management</h1>
-      <ul id="studentsList"></ul>
 
-    <script src="student.js"></script>
+<div class="container">
+
+    <div class="top-bar">
+
+    <button class="back-btn" onclick="history.back()">
+        ← Back
+    </button>
+
+    <h1>🎓 Student Management System</h1>
+
+</div>
+    <h1>🎓 Student Management System</h1>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Course</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentsList">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="student.js"></script>
+
 </body>
 </html>

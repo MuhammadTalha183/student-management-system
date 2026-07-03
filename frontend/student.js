@@ -1,23 +1,47 @@
 const fetchStudents = async () => {
-    try {
-        const responce = await fetch("http://localhost:5000/api/students/getStudents");
-        const data = await responce.json();
-        console.log(data);
 
-        for (const student of data) {
-           document.getElementById('studentsList').innerHTML += `
-           <tr>
-                <td> ${student.fullname} </td> <br>
-                <td>${student.email}</td> <br>
-                <td>${student.phone}</td><br>
-                <td>${student.course}</td><br>
-                <td>${student.gender}</td><br>
-           </tr>
-           `
-        }
+    try {
+
+        const response = await fetch(
+            "http://localhost:5000/api/students/getStudents"
+        );
+
+        const students = await response.json();
+
+        const studentsList = document.getElementById("studentsList");
+
+        studentsList.innerHTML = "";
+
+        students.forEach((student,index)=>{
+
+            studentsList.innerHTML += `
+
+            <tr>
+
+                <td>${index+1}</td>
+
+                <td>${student.fullname}</td>
+
+                <td>${student.email}</td>
+
+                <td>${student.phone}</td>
+
+                <td>${student.course}</td>
+
+                <td>${student.gender}</td>
+
+            </tr>
+
+            `;
+
+        });
+
     } catch (error) {
+
         console.log(error);
+
     }
+
 }
 
 fetchStudents();
