@@ -1,3 +1,15 @@
+// NAVBAR CODE 
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+// STUDENT FORM CODE
+
+
 const form = document.getElementById('studentForm');
 
 form.addEventListener('submit',async function(event) {

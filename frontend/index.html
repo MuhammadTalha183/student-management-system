@@ -8,43 +8,51 @@
 </head>
 <body>
 
-    <!-- Navbar  -->
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Navbar Layout</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  
-                <!-- Navbar End  -->
-
-    <!-- Admission Form -->
-    <h1> Student Admission Form </h1>
-    <form action="" id="studentForm">
-        <input type="text" name="" id="fullname" placeholder="Full Name" required>
-
-        <input type="email" name="" id="email" placeholder="Email" required>
-
-        <input type="phone" name="" id="phone" placeholder="Phone Number" required>
-
-        <input type="text" name="" id="course" placeholder="Course" required>
-
-         <select id="gender">
-        <option value="">Select Gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-    </select>
-
-    <button type="submit">
-        Submit
+    <!-- Navbar Start --><!-- Navigation Bar Element -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-logo">
+      <a href="#">BrandLogo</a>
+    </div>
+    
+    <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
 
-    </form>
+    <ul class="nav-links" id="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="student.html">Students</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
+
+
+
+
+
+                <!-- Navbar End  -->
+
+
+                        <h2>Admission Form</h2>
+
+    <!-- Admission Form -->
+   <div class="main-wrapper">
+        <form id="admissionForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="grade">Grade:</label>
+            <input type="text" id="grade" name="grade" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        </div>
     <ul id="studentsList"></ul>
 
     <script src="app.js"></script>
