@@ -38,21 +38,59 @@
 
                         <h2>Admission Form</h2>
 
-    <!-- Admission Form -->
-   <div class="main-wrapper">
-        <form id="admissionForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+<!-- Admission Form -->
+<div class="main-wrapper">
+    <form id="studentForm">
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
+        <label for="fullname">Full Name</label>
+        <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+        >
 
-            <label for="grade">Grade:</label>
-            <input type="text" id="grade" name="grade" required>
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+        >
 
-            <button type="submit">Submit</button>
-        </form>
-        </div>
+        <label for="phone">Phone Number</label>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="03XXXXXXXXX"
+            required
+        >
+
+        <label for="course">Course</label>
+        <input
+            type="tel"
+            id="course"
+            name="course"
+            placeholder="PYTHON, JAVA, C++"
+            required
+        >
+
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Submit Admission</button>
+
+    </form>
+</div>
     <ul id="studentsList"></ul>
 
     <script src="app.js"></script>
