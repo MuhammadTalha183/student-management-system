@@ -62,6 +62,28 @@ export const getStudents = async (req , res) =>{
     }
 
     // dynamic student fetching by id 
+
+export const getStudentById = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const getStudent = await pool.query("SELECT * FROM students WHERE id = $1", [id]);
+        if (getStudent.rows.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "Student not found"
+            });
+        }
+        res.json(getStudent.rows[0]);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
+
+
 // export const getStudentById = async (req, res) => {
 //     const { id } = req.params;
 //     try {
