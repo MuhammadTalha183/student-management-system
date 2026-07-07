@@ -84,3 +84,27 @@ export const getStudentById = async (req, res) => {
 };
 
 
+// updae student by id
+export const updateStudentById = async (req, res) => {
+    const { id } = req.params;
+    const { fullname, email, phone, course, gender } = req.body;
+    try {
+        const updateStudent = await pool.query(
+            "UPDATE students SET fullname = $1, email = $2, phone = $3, course = $4, gender = $5 WHERE id = $6 RETURNING *",
+            [fullname, email, phone, course, gender, id]
+        );
+        if (updateStudent.rows.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "Student not found"
+            });
+        }
+        res.json(updateStudent.rows[0]);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
