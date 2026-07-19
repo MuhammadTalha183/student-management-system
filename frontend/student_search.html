@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Student Search</title>
 </head>
 <body>
-    
+     <button class="back-btn" onclick="history.back()">
+        ← Back
+    </button>
+
     <div class="search-container">
+
+         
         <h1>Search Students</h1>
+
+       
         <form id="searchForm">
             <label for="searchQuery">Search by Name or ID:</label>
             <input
@@ -20,7 +28,6 @@
             >
             <button type="submit">Search</button>
         </form>
-
     </div>
 </body>
 </html>
