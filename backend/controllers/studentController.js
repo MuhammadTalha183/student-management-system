@@ -61,21 +61,48 @@ export const getStudents = async (req , res) =>{
     }
     }
 
-    // dynamic student fetching by id 
 
-export const getStudentById = async (req, res) => {
-    const { id } = req.params;
+    //  dynamically get student by id or name
+    export const getStudentByIdOrName = async (req, res) => {
+    // 1. Read 'query' from the URL query string (?query=...)
+    const { query } = req.query;
+
+    if (!query) {
+        return res.status(400).json({
+            success: false,
+            message: "Search query is required"
+        });
+    }
+
     try {
-        const getStudent = await pool.query("SELECT * FROM students WHERE id = $1", [id]);
+        let getStudent;
+
+        // 2. Check if the search input is a number (ID)
+        if (!isNaN(query)) {
+            getStudent = await pool.query(
+                "SELECT * FROM students WHERE id = $1", 
+                [parseInt(query)]
+            );
+        } else {
+            // 3. Fallback to partial name matching (case-insensitive)
+            getStudent = await pool.query(
+                "SELECT * FROM students WHERE name ILIKE $1", 
+                [`%${query}%`]
+            );
+        }
+
         if (getStudent.rows.length === 0) {
             return res.status(404).json({
                 success: false,
-                message: "Student not found"
+                message: "No students found matching your search"
             });
         }
-        res.json(getStudent.rows[0]);
+
+        // 4. Return the full array since names can return multiple rows
+        res.json(getStudent.rows);
+
     } catch (error) {
-        console.log(error);
+        console.error(error);
         res.status(500).json({
             success: false,
             message: error.message

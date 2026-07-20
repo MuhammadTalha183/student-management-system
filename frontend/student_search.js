@@ -8,7 +8,7 @@ searchForm.addEventListener('submit', async (e) => {
 
     try {
         const response = await fetch(
-            `http://localhost:5000/api/students/searchStudents?query=${query}`
+            `http://localhost:5000/api/students/getStudentById?query=${query}`
         );
         const students = await response.json();
         console.log(students);
